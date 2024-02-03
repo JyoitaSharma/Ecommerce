@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Smoke test Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Ecommsmoke suite(failed)">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="https://www.amazon.co.uk/"/>
+    <classes>
+      <class name="ecomm.amazon.testcases.Login_smoketest">
+        <methods>
+          <include name="tc_01_amazonsearch" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- ecomm.amazon.testcases.Login_smoketest -->
+    </classes>
+  </test> <!-- Ecommsmoke suite(failed) -->
+</suite> <!-- Failed suite [Smoke test Suite] -->
