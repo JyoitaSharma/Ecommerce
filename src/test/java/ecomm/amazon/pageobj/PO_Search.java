@@ -19,19 +19,19 @@ WebDriver Driver;
 	@FindBy(how=How.ID,using="nav-search-submit-button\"")
 	private WebElement button_search;
 	//Methods
-	public void SetSerchTextBox(String arg) {
+	public void SetSearchTextBox(String arg) {
 		txtbx_search.sendKeys(arg);
 		Reporter.log("Product entered in Search Box:"+arg,true);
 	}
 	
-	public void ClickSerachbutton() {
+	public void ClickSearchbutton() {
 		button_search.sendKeys();
-		Reporter.log("Clciked Search button:",true);
+		Reporter.log("Clicked Search button:",true);
 	}
 	//Business Method
 	public void SearchAProduct(String arg) {
-		ClickSerachbutton();
-		SetSerchTextBox(arg);
+		ClickSearchbutton();
+		SetSearchTextBox(arg);
 		String actual=Driver.getTitle();
 		String expected="Iphone";
 		Reporter.log("able to search product:"+arg,true);

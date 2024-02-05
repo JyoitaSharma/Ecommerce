@@ -53,7 +53,7 @@ WebDriver Driver;
 			FinalSignin.click();
 			String actual=Driver.getTitle();
 			String expected="Welcome";
-			Reporter.log("able to search product:"+arg,true);
+			Reporter.log("Login successful:"+arg,true);
 			Assert.assertEquals(actual, expected,"Login Failed");
 		}
 			
@@ -69,8 +69,8 @@ WebDriver Driver;
 				confirm_button.click();
 				String actual=Driver.getTitle();
 				String expected="Welcome";
-				Reporter.log("able to search product:"+arg,true);
-				Assert.assertEquals(actual, expected,"Login Failed");
+				Reporter.log("User registered:"+arg,true);
+				Assert.assertEquals(actual, expected,"Registration Failed");
 		
 	}
 	//
