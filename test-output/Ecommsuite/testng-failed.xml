@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Smoke test Suite]" guice-stage="DEVELOPMENT">
+<suite name="Failed suite [Ecommsuite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Ecommsmoke suite(failed)">
     <parameter name="password" value="Password1"/>
     <parameter name="browser" value="chrome"/>
@@ -16,4 +16,4 @@
       </class> <!-- ecomm.amazon.testcases.Login_smoketest -->
     </classes>
   </test> <!-- Ecommsmoke suite(failed) -->
-</suite> <!-- Failed suite [Smoke test Suite] -->
+</suite> <!-- Failed suite [Ecommsuite] -->

@@ -12,7 +12,7 @@ import ecomm.amazon.pageobj.PO_Search;
 import ecomm.amazon.utils.Browsermanager;
 
 
-public class Search_smoketest {
+public class Login_smoketest {
 	
 	@Test(priority=1 )
 	@Parameters({"browser","url"})
@@ -28,12 +28,17 @@ public class Search_smoketest {
 
 	}
 	@Test(priority=2 )
-	public void login_Signin(String browser,String url)
+	@Parameters({"browser","url","username","password"})
+	public void login_Signin(String browser,String url,String username,String password) throws InterruptedException
 	
 	{
 	      WebDriver driver=Browsermanager.getDriver(browser,url);
 	      PO_Registration obj= PageFactory.initElements(driver,PO_Registration.class);
-	      obj.SigninExisting(url);
+	      PO_Registration login=new PO_Registration(driver);
+	      login.enterUsername("username");
+	      login.cust_password("password");
+	      login.clickLogin();
+	      Thread.sleep(3000);
 	      Assert.assertEquals(driver.getTitle(),"Welcome to Amazon");
 	      
 	      
@@ -42,13 +47,19 @@ public class Search_smoketest {
 	
 }
 	@Test(priority=3 )
-	public void New_registration(String browser,String url)
+	@Parameters({"browser","url"})
+	public void New_registration(String browser,String url) throws InterruptedException
 	
 	{
 	      WebDriver driver=Browsermanager.getDriver(browser,url);
 	      PO_Registration obj= PageFactory.initElements(driver,PO_Registration.class);
-	      obj.ClickSignup();
-	      obj.NewRegistration(url);
+	      PO_Registration newcustomer=new PO_Registration(driver);
+	      newcustomer.EnterName("name");
+	      newcustomer.Email("email");
+	      newcustomer.EnterPassword("password");
+	      newcustomer.EnterPassword("password");
+	      newcustomer.ConfirmSignUp();
+	      Thread.sleep(3000);
 	      Assert.assertEquals(driver.getTitle(),"Welcome to Amazon");
 	      
 	      

@@ -36,13 +36,45 @@ WebDriver Driver;
 		private WebElement confirm_button;
 		//Methods
 		public void ClickSignin() {
-			Signin_button.sendKeys();
+			Signin_button.click();
 			Reporter.log("Clicked Signin button:",true);
 		}
 		public void ClickSignup() {
 			new_signup.sendKeys();
 			Reporter.log("Clicked Signup button:",true);
 		}
+		
+		public void enterUsername(String user) {
+			Email.sendKeys(user);
+		}
+		
+		public void cust_password(String password) {
+			cust_password.sendKeys(password);
+			cust_password_confirm.sendKeys(password);
+		}
+		public void clickLogin() {
+			FinalSignin.click();
+		}
+		
+		public void EnterName(String fullname) {
+			cust_name.sendKeys(fullname);
+		}
+		public void Email(String email) {
+			cust_email.sendKeys(email);
+		}
+		public void EnterPassword(String password) {
+			cust_password.sendKeys(password);
+			cust_password_confirm.sendKeys(password);
+			
+			
+			
+		}
+		public void ConfirmSignUp() {
+			confirm_button.click();	
+		}
+		
+		
+		
 		public void SigninExisting(String arg) {
 			ClickSignin();
 			Email.sendKeys(arg);
